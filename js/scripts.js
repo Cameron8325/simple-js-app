@@ -16,11 +16,11 @@ pokemonList = [
   {
     name: 'Squirtle',
     height: 5,
-    types: [water]
+    types: ["water"]
 },
   {
     name: 'Caterpie',
     height: 3,
-    type: [bug]
+    type: ["bug"]
   }
 ]
