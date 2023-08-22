@@ -30,7 +30,7 @@ pokemonList = [
   }
 ]
 
-for (let i = 0; i < pokemonList.length; i++){
+pokemonList.forEach(function(pokemon){
   let pokemonName = pokemonList[i].name;
   let pokemonHeight = pokemonList[i].height;
   let heightMessage = "";
@@ -44,4 +44,4 @@ for (let i = 0; i < pokemonList.length; i++){
   }
 
   document.write(pokemonName + " (height: " + pokemonHeight + ") - " + heightMessage + "<br>");
-}
+});
