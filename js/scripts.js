@@ -46,7 +46,7 @@ let pokemonRepository = (function() {
   })();
 
 pokemonRepository.getALL().forEach(function(pokemon){
-  let pokemonName = pokemonL.name;
+  let pokemonName = pokemon.name;
   let pokemonHeight = pokemon.height;
   let heightMessage = "";
 
