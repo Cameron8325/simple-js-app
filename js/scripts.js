@@ -46,17 +46,6 @@ let pokemonRepository = (function() {
   })();
 
 pokemonRepository.getALL().forEach(function(pokemon){
-  let pokemonName = pokemon.name;
-  let pokemonHeight = pokemon.height;
-  let heightMessage = "";
-
-  if (pokemonHeight > 1.6) {
-    heightMessage = "Wow, that's so big!";
-  } else if (pokemonHeight > 0.3 && pokemonHeight < 1.6) {
-    heightMessage = "Average Sized Pokemon";
-  } else {
-    heightMessage = "Small Pokemon";
-  }
-
-  document.write(pokemonName + " (height: " + pokemonHeight + ") - " + heightMessage + "<br>");
+  let pokemonUl = document.querySelector('.pokemon-list')
+  let listItem = document.createElement('li')
 });
