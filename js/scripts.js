@@ -1,5 +1,5 @@
 let pokemonRepository = (function() {
-  let pokemonList = []
+  let repository = []
 
   pokemonList = [
     {
@@ -39,24 +39,23 @@ let pokemonRepository = (function() {
     pokemonList.push(pokemon);
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon)
+  }
+
   return {
     getALL: getALL,
-    add: add
+    add: add,
+    addListItem: addListItem
   };
   })();
 
 pokemonRepository.getALL().forEach(function(pokemon){
-  let pokemonName = pokemon.name;
-  let pokemonHeight = pokemon.height;
-  let heightMessage = "";
-
-  if (pokemonHeight > 1.6) {
-    heightMessage = "Wow, that's so big!";
-  } else if (pokemonHeight > 0.3 && pokemonHeight < 1.6) {
-    heightMessage = "Average Sized Pokemon";
-  } else {
-    heightMessage = "Small Pokemon";
-  }
-
-  document.write(pokemonName + " (height: " + pokemonHeight + ") - " + heightMessage + "<br>");
+  pokemonRepository.addListItem(pokemon);
 });
