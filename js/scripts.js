@@ -52,7 +52,7 @@ let pokemonRepository = (function() {
     pokemonList.appendChild(listPokemon)
   }
 
-  function showDetails (pokemon) {
+  function showDetails(pokemon) {
     console.log(pokemon)
   }
 
