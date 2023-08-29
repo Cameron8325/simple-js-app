@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=1281'
+  let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=1281';
 
   function getALL() {
     return pokemonList;
@@ -21,6 +21,9 @@ let pokemonRepository = (function () {
     });
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon)
+    button.addEventListener("click", function(event) {
+      showDetails(pokemon);
+    });
   }
 
   function loadList() {
@@ -53,9 +56,9 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+  function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+      console.log(item);
     });
   }
 
