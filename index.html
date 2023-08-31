@@ -11,9 +11,19 @@
     </head>
     <body>
         <ul class="pokemon-list"></ul>
-        <script src="js/promise-polyfill.js"></script>
-        <script src="js/fetch-polyfill.js"></script>
-        <script src="js/scripts.js"></script>    
+
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="modal-pokemon-name"></h2>
+              <p>Height: <span id="modal-pokemon-height"></span></p>
+              <img id="modal-pokemon-image" src="#" alt="Pokemon">
+            </div>
+          </div>
+
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
+    <script src="js/scripts.js"></script>    
     </body>
     </html>
 </html>

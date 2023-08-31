@@ -56,7 +56,39 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      let modal = document.querySelector("#pokemon-modal");
+      let modalName = document.querySelector("#modal-pokemon-name");
+      let modalHeight = document.querySelector("#modal-pokemon-height");
+      let modalImage = document.querySelector("#modal-pokemon-image");
+      let closeModalButton = document.querySelector(".close");
+
+      modalName.textContent = "Name: " + pokemon.name;
+      modalHeight.textContent = pokemon.height + " decimetres";
+      modalImage.src = pokemon.imageUrl;
+
+      modal.style.display = "block";
+      modalVisible = true;
+
+      closeModalButton.addEventListener('click', function () {
+        modal.style.display = "none";
+        modalVisible = false;
+      });
+
+      // Close the modal when clicking outside of it
+      document.addEventListener('click', function (event) {
+        if (modalVisible && event.target === modal) {
+          modal.style.display = "none";
+          modalVisible = false;
+        }
+      });
+
+      // Close the modal when pressing the "Esc" key
+      document.addEventListener('keydown', function (event) {
+        if (modalVisible && event.key === "Escape") {
+          modal.style.display = "none";
+          modalVisible = false;
+        }
+      });
     });
   }
 
