@@ -14,12 +14,12 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
-    listItem.addClass("list-group-item");
+    listPokemon.classList.add("list-group-item");
     button.innerText = pokemon.name;
 
-    button.addClass("btn", "btn-primary", "btn-lg");
-    button.setAttribute('data-toggle', 'modal');
+    button.classList.add("btn", "btn-primary", "btn-lg");
     button.setAttribute('data-target', '#modal-container');
+    button.setAttribute('data-toggle', 'modal');
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     button.addEventListener('click', function () {
@@ -82,7 +82,7 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      showModal(pokemon);
+
     });
   }
 
