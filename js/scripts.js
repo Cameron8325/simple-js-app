@@ -40,13 +40,18 @@ let pokemonRepository = (function () {
     let nameElement = $('<h5 class="modal-title">' + pokemon.name + '</h5>');
     let imageElement = $('<img class="modal-img">');
       imageElement.attr('src', pokemon.imageUrl);
-    let heightElement = $('<p>' + 'height : ' + pokemon.height + '</p>');
-    let weightElement = $('<p>' + 'weight : ' + pokemon.weight + '</p>');
+    let heightElement = $('<p>' + 'height : ' + pokemon.height + ' decimeters' + '</p>');
+    let weightElement = $('<p>' + 'weight : ' + pokemon.weight + ' decagrams' + '</p>');
+    let typesElement = $('<p>' + 'Types: ' + pokemon.types.join(', ') + '</p>');
+    let abilitiesElement = $('<p>' + 'Abilities: ' + pokemon.abilities.join(', ') + '</p>');
+
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
+    modalBody.append(typesElement);
+    modalBody.append(abilitiesElement);
   }
 
   function loadList() {
@@ -75,7 +80,12 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.weight = details.weight;
-      item.types = details.types;
+      item.types = details.types.map(function (type) {
+        return type.type.name;
+      });
+      item.abilities = details.abilities.map(function (ability) {
+        return ability.ability.name;
+      });
     }).catch(function (e) {
       console.error(e);
     });
