@@ -5,7 +5,7 @@
   }
 
 body {
-  background-image: url('/img/pokemon-bg.png');
+  background-image: url('../img/pokemon-bg.png');
   background-repeat: repeat; /* This will make it repeat both horizontally and vertically */
 }
 
