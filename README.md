@@ -25,5 +25,6 @@ The Pokedex App is a simple web application that allows users to explore informa
 ## Contributing
 
 Your contributions are invaluable in enriching my knowledge and fostering growth. I wholeheartedly invite your input and suggestions to enhance this project. Whether it's sharing insights, offering feedback, or proposing improvements, your collaboration is pivotal. Let's embark on this journey together, advancing our expertise in the realm of web development.
+
 ---
 
