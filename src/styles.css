@@ -1,8 +1,24 @@
-.list-group-item {
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-  }
+.list-group ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Create three columns with equal width, allowing content to shrink */
+  gap: 20px; /* Add some gap between grid items */
+  justify-content: center; /* Center the grid horizontally */
+}
+
+.list-group .list-group-item {
+  display: flex;
+  justify-content: center; /* Center the content horizontally within each grid item */
+}
+
+.list-group .list-group-item button {
+  width: 100%; /* Make the button take up full width of its parent */
+}
+
+.modal-body {
+  display: column;
+  margin: auto;
+}
+
 
 body {
   background-image: url('../img/pokemon-bg.png');
@@ -12,6 +28,22 @@ body {
 
 .custom-navbar {
   width: fit-content; /* Set the width to fit the content (the logo) */
-  margin: 0 auto; /* Center the navbar horizontally */
-  padding: 0; /* Remove any padding */
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #f00; /* Red border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px; /* Add some padding around the image */
+}
+
+@media screen and (max-width: 768px) {
+  .list-group ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two columns on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .list-group ul {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* One column on even smaller screens */
+  }
 }
